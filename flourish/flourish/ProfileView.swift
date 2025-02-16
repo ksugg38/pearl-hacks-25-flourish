@@ -23,14 +23,14 @@ struct ProfileView: View {
             
             VStack(alignment: .leading){
                 List{
-                    Text("Date Joined: \(user.dateJoined.formatted(date: .long, time: .omitted))")
-                    Text("Financial Goals: \(user.financialGoals)")
-                    Text("Financial Interests: \(user.financialInterests)")
+                    Text("Name: \(user.name)")
+                    Text("Number of Plants: \(user.numPlants)")
                     Text("Friends: \(user.friends.count)")
-
+                    Text("Group: \(user.group)")
+                    Text("Bio: \(user.bio)")
+                    Text("Financial Interests: \(user.financialInterests.joined(separator: ", "))")
                     
                 }
-                
                 
             }
             .padding()

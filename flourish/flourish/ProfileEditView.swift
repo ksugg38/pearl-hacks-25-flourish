@@ -15,6 +15,9 @@ struct ProfileEditView: View {
             Form {
                 Section("User") {
                     TextField("Name", text: $profile.name)
+                    TextField("Group", text: $profile.group)
+                    TextField("Bio", text: $profile.bio, axis: .vertical)
+                        .lineLimit(3...)
                 }
             
                 Section("Finances Goals") {
