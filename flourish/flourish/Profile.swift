@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct Profile: Identifiable {
     let id = UUID()
     var name: String
@@ -19,9 +18,8 @@ struct Profile: Identifiable {
     var financialInterests: [String]
     var financialGoals: String
     let profileImage: Image
-    let friends: [Profile]
+    var friends: [Profile]
 }
-
 
 extension Profile {
     static let jim = Profile(
@@ -45,9 +43,9 @@ extension Profile {
         financialInterests: ["Small Businesses", "Investments"],
         financialGoals: "Starting an Etsy shop",
         profileImage: Image(.girlProfile),
-        friends: [jim]
+        friends: [pam, rico]
     )
-    
+
     static let pam = Profile(
         name: "Pam",
         dateJoined: .now,
@@ -57,19 +55,18 @@ extension Profile {
         financialInterests: ["Small Businesses", "Budget"],
         financialGoals: "Being smarter with money",
         profileImage: Image(.girlProfile),
-        friends: [jim, ellie]
+        friends: [jim]
     )
-    
-    static let rico = Profile(
-        name: "Rico",
-        dateJoined: .now,
-        numPlants: 11,
-        group: "App Team",
-        bio: "Whasssup!",
-        financialInterests: ["Investment"],
-        financialGoals: "Get more money",
-        profileImage: Image(.guyProfile),
-        friends: []
-        )
-}
 
+    static let rico = Profile(
+        name: "Rico",
+        dateJoined: .now,
+        numPlants: 11,
+        group: "App Team",
+        bio: "Whasssup!",
+        financialInterests: ["Investment"],
+        financialGoals: "Get more money",
+        profileImage: Image(.guyProfile),
+        friends: [pam]
+    )
+}

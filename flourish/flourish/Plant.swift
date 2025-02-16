@@ -16,26 +16,26 @@ struct Plant: Identifiable {
     var nextDate: Date
     var notes: String
     let createdAt: Date
-    let image: Image
+    var image: Image = Image(.whiteFlower)
 }
 
 
 extension Plant {
     static let savings = Plant(
-        name: "Jim",
+        name: "2025 Savings",
         type: "Savings",
         nextDate: Date(timeIntervalSinceNow: 60 * 60 * 24),
         notes: "Save for a car!",
         createdAt: .now,
-        image: Image(.whiteFlower)
+        image: Image(.sunFlower)
     )
 
     static let investment = Plant(
-        name: "Ellie",
+        name: "Investment 1",
         type: "Investment",
         nextDate: .now,
         notes: "Learning about investments",
         createdAt: .now,
-        image: Image(.whiteFlower)
+        image: Image(.blueFlower)
     )
 }

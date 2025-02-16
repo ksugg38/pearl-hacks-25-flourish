@@ -14,22 +14,32 @@ struct PlantRowView: View {
             plant.image
                 .resizable()
                 .scaledToFill()
-                .frame(width: 44, height: 44)
+                .frame(width: 50, height: 50)
                 .clipShape(.circle)
+            Spacer()
             Text("\(plant.name)")
+                .foregroundStyle(Color.text)
             
         }
+        .padding()
+        .background(Color.topBarGreen)
+        
+        .cornerRadius(10)
+
+        .shadow(color: Color.plantCardGreen, radius: 2, x: -5, y: 5)
+        .foregroundColor(Color.text)
+
     }
 }
 
 #Preview("Plant Row") {
     @Previewable @State var savingsPlant = Plant(
-        name: "Planty",
+        name: "Car Savings",
         type: "Savings",
         nextDate: Date(timeIntervalSinceNow: 60 * 60 * 24),
         notes: "Save for a car!",
         createdAt: .now,
-        image: Image(.whiteFlower)
+        image: Image(.sunFlower)
     )
     
     PlantRowView(plant: $savingsPlant)
